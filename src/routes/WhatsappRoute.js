@@ -1,7 +1,7 @@
 const express = require('express');
 const { handleSendMessage, handleSendGroup } = require('../controllers/WhatsappController');
 
-const createRoutes = () => {
+const messageRoutes = () => {
   const router = express.Router();
   
   router.post('/send-message', handleSendMessage);
@@ -11,4 +11,4 @@ const createRoutes = () => {
   return router;
 };
 
-module.exports = createRoutes;
+module.exports = messageRoutes;

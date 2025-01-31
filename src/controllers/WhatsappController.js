@@ -1,5 +1,5 @@
 const { getWhatsappClient } = require('../client/WhatsappClient')
-const { formatDate, formatPhoneNumber } = require("../utils/formater");
+const { formatDate, formatPhoneNumber } = require("../utils/formatter");
 
 const handleSendMessage = (req, res) => {
   const { number, date, time } = req.body;
@@ -9,7 +9,7 @@ const handleSendMessage = (req, res) => {
   }
 
   try {
-    const formattedNumber = formatPhoneNumber(number);
+    const formattedNumber = formatPhoneNumber(number) + '@c.us';
     const formattedDate = formatDate(date);
 
     const client = getWhatsappClient();
@@ -34,7 +34,7 @@ const handleSendGroup = (req, res) => {
   }
 
   try {
-    let formattedNumberGroup = number+"@g.us";
+    let formattedNumberGroup = formatPhoneNumber(number) + "@g.us";
     const formattedDate = formatDate(date);
 
     const client = getWhatsappClient();

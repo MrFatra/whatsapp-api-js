@@ -10,10 +10,8 @@ const formatDate = (dateString) => {
 };
 
 const formatPhoneNumber = (number) => {
-  if (/^0/.test(number)) {
-    return `62${number.slice(1)}@c.us`;
-  }
-  return number.endsWith("@c.us") ? number : `${number}@c.us`;
+  if (/^0/.test(number)) return `62${number.slice(1)}`;
+  return number;
 };
 
 module.exports = { formatDate, formatPhoneNumber };

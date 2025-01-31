@@ -35,7 +35,8 @@ const createClient = () => {
 
 const getWhatsappClient = () => {
   if (!whatsappClient) {
-    whatsappClient = createClient();
+    whatsappClient = createClient()
+    whatsappClient.initialize();
   }
   return whatsappClient;
 };
